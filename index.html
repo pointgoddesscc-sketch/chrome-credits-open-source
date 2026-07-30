@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="color-scheme" content="light dark">
+  <title>Credits – Open Source Licenses (Chrome-inspired)</title>
+  <style>
+    /* Professional Chrome-inspired styling for business websites */
+    :root {
+      --bg: #ffffff;
+      --text: #202124;
+      --product-bg: #c3d9ff;
+      --license-bg: #e8eef7;
+      --accent: #1a73e8;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #202124;
+        --text: #e8eaed;
+        --product-bg: #3c4043;
+        --license-bg: #303134;
+        --accent: #8ab4f8;
+      }
+    }
+    * { box-sizing: border-box; }
+    body {
+      font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      font-size: 14px;
+      max-width: 1020px;
+      margin: 0 auto;
+      padding: 24px 16px;
+      line-height: 1.5;
+    }
+    .page-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 24px;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    .page-title {
+      font-size: 28px;
+      font-weight: 700;
+      margin: 0;
+    }
+    .search-box {
+      padding: 10px 14px;
+      border: 1px solid #dadce0;
+      border-radius: 8px;
+      font-size: 14px;
+      width: 280px;
+      max-width: 100%;
+    }
+    .product {
+      background: var(--product-bg);
+      border-radius: 8px;
+      margin-top: 16px;
+      padding: 8px 12px;
+      overflow: auto;
+    }
+    .product-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    .product .title {
+      font-size: 16px;
+      font-weight: 600;
+    }
+    .product .homepage a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+    .product .homepage a:hover {
+      text-decoration: underline;
+    }
+    .toggle-btn {
+      background: transparent;
+      border: 1px solid var(--accent);
+      color: var(--accent);
+      padding: 4px 12px;
+      border-radius: 16px;
+      cursor: pointer;
+      font-size: 13px;
+    }
+    .toggle-btn:hover {
+      background: var(--accent);
+      color: white;
+    }
+    .licence {
+      background: var(--license-bg);
+      border-radius: 6px;
+      margin-top: 10px;
+      padding: 16px;
+      display: none;
+    }
+    .licence pre {
+      white-space: pre-wrap;
+      word-wrap: break-word;
+      margin: 0;
+      font-family: 'Consolas', 'Monaco', monospace;
+      font-size: 12px;
+    }
+    .licence.visible {
+      display: block;
+    }
+    .controls {
+      display: flex;
+      gap: 12px;
+      margin-bottom: 8px;
+    }
+    footer {
+      margin-top: 48px;
+      padding-top: 24px;
+      border-top: 1px solid #dadce0;
+      font-size: 13px;
+      color: #5f6368;
+    }
+  </style>
+</head>
+<body>
+  <div class="page-header">
+    <h1 class="page-title">Credits</h1>
+    <div class="controls">
+      <input type="search" id="searchInput" class="search-box" placeholder="Search components..." aria-label="Search licenses">
+      <button id="toggleAllBtn" class="toggle-btn">Show All</button>
+    </div>
+  </div>
+
+  <p>Open-source software used in Chromium-based browsers. Inspired by <code>chrome://credits/</code>. Built for website development, compliance, and marketing transparency.</p>
+
+  <div id="credits-container">
+    <!-- Entries will be rendered by JavaScript -->
+  </div>
+
+  <footer>
+    <p>This page is a developer recreation for educational, compliance, and website development purposes.  
+    Full official credits are available inside Google Chrome via <code>chrome://credits/</code>.</p>
+    <p>Repository: <a href="https://github.com/pointgoddesscc-sketch/chrome-credits-open-source">chrome-credits-open-source</a> · MIT License for this project code.</p>
+  </footer>
+
+  <script>
+    /**
+     * Chrome Credits Viewer – Modern JavaScript Module
+     * Fully documented for website development teams.
+     * @see docs/JS_DOCUMENTATION.md
+     */
+
+    // Sample license data (expand with full Chromium set)
+    const LICENSE_DATA = [
+      {
+        name: "The Chromium Project",
+        url: "https://www.chromium.org",
+        license: `Copyright 2015 The Chromium Authors. All rights reserved.
+
+Redistribution and use in source and binary forms, with or without
+modification, are permitted provided that the following conditions are
+met:
+
+   * Redistributions of source code must retain the above copyright
+notice, this list of conditions and the following disclaimer.
+   * Redistributions in binary form must reproduce the above
+copyright notice, this list of conditions and the following disclaimer
+in the documentation and/or other materials provided with the
+distribution.
+   * Neither the name of Google Inc. nor the names of its
+contributors may be used to endorse or promote products derived from
+this software without specific prior written permission.
+
+THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+"AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
+LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR
+A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT
+OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
+SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT
+LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
+DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY
+THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+(INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
+OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.`
+      },
+      {
+        name: "V8 JavaScript Engine",
+        url: "https://v8.dev/",
+        license: `Copyright 2006-2011, the V8 project authors. All rights reserved.
+Redistribution and use in source and binary forms, with or without
+modification, are permitted provided that the following conditions are
+met:
+
+    * Redistributions of source code must retain the above copyright
+      notice, this list of conditions and the following disclaimer.
+    * Redistributions in binary form must reproduce the above
+      copyright notice, this list of conditions and the following
+      disclaimer in the documentation and/or other materials provided
+      with the distribution.
+    * Neither the name of Google Inc. nor the names of its
+      contributors may be used to endorse or promote products derived
+      from this software without specific prior written permission.
+
+THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+"AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
+LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR
+A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT
+OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
+SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT
+LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
+DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY
+THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+(INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
+OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.`
+      },
+      {
+        name: "WebKit (Blink)",
+        url: "https://webkit.org/",
+        license: `BSD and LGPL v2 and LGPL v2.1
+
+See full LICENSE_FOR_ABOUT_CREDITS in Chromium third_party/blink for complete text.
+This component includes code under BSD-style and LGPL licenses.`
+      },
+      {
+        name: "Almost Native Graphics Layer Engine (ANGLE)",
+        url: "https://chromium.googlesource.com/angle/angle/",
+        license: `Copyright 2018 The ANGLE Project Authors.
+All rights reserved.
+
+Redistribution and use in source and binary forms, with or without
+modification, are permitted provided that the following conditions
+are met:
+
+    Redistributions of source code must retain the above copyright
+    notice, this list of conditions and the following disclaimer.
+
+    Redistributions in binary form must reproduce the above
+    copyright notice, this list of conditions and the following
+    disclaimer in the documentation and/or other materials provided
+    with the distribution.
+
+    Neither the name of TransGaming Inc., Google Inc., 3DLabs Inc.
+    Ltd., nor the names of their contributors may be used to endorse
+    or promote products derived from this software without specific
+    prior written permission.
+
+THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+"AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
+LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS
+FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE
+COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT,
+INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING,
+BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
+LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
+CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT
+LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN
+ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
+POSSIBILITY OF SUCH DAMAGE.`
+      }
+    ];
+
+    /**
+     * Renders all license product cards into the container.
+     * @param {Array} data - Array of {name, url, license} objects
+     */
+    function renderCredits(data) {
+      const container = document.getElementById('credits-container');
+      container.innerHTML = '';
+
+      data.forEach((item, index) => {
+        const product = document.createElement('div');
+        product.className = 'product';
+        product.dataset.name = item.name.toLowerCase();
+
+        product.innerHTML = `
+          <div class="product-header">
+            <span class="title">${escapeHtml(item.name)}</span>
+            <div>
+              <span class="homepage"><a href="${escapeHtml(item.url)}" target="_blank" rel="noopener">homepage</a></span>
+              <button class="toggle-btn" data-index="${index}" aria-expanded="false">show license</button>
+            </div>
+          </div>
+          <div class="licence" id="license-${index}">
+            <pre>${escapeHtml(item.license)}</pre>
+          </div>
+        `;
+        container.appendChild(product);
+      });
+
+      // Attach toggle listeners
+      document.querySelectorAll('.toggle-btn[data-index]').forEach(btn => {
+        btn.addEventListener('click', () => toggleLicense(btn));
+      });
+    }
+
+    /**
+     * Toggle visibility of a single license block.
+     * @param {HTMLElement} btn - The toggle button element
+     */
+    function toggleLicense(btn) {
+      const index = btn.dataset.index;
+      const licenceEl = document.getElementById(`license-${index}`);
+      const isVisible = licenceEl.classList.toggle('visible');
+      btn.textContent = isVisible ? 'hide license' : 'show license';
+      btn.setAttribute('aria-expanded', isVisible);
+    }
+
+    /**
+     * Toggle all licenses open or closed.
+     */
+    function toggleAll() {
+      const allLicences = document.querySelectorAll('.licence');
+      const allBtns = document.querySelectorAll('.toggle-btn[data-index]');
+      const anyOpen = Array.from(allLicences).some(el => el.classList.contains('visible'));
+
+      allLicences.forEach(el => {
+        if (anyOpen) el.classList.remove('visible');
+        else el.classList.add('visible');
+      });
+      allBtns.forEach(btn => {
+        btn.textContent = anyOpen ? 'show license' : 'hide license';
+        btn.setAttribute('aria-expanded', !anyOpen);
+      });
+      document.getElementById('toggleAllBtn').textContent = anyOpen ? 'Show All' : 'Hide All';
+    }
+
+    /**
+     * Filter products by search term.
+     * @param {string} query
+     */
+    function filterCredits(query) {
+      const term = query.toLowerCase().trim();
+      document.querySelectorAll('.product').forEach(product => {
+        const name = product.dataset.name || '';
+        product.style.display = name.includes(term) ? '' : 'none';
+      });
+    }
+
+    /**
+     * Escape HTML to prevent XSS (security best practice for website development).
+     * @param {string} text
+     * @returns {string}
+     */
+    function escapeHtml(text) {
+      const div = document.createElement('div');
+      div.textContent = text;
+      return div.innerHTML;
+    }
+
+    // Initialize on DOM ready
+    document.addEventListener('DOMContentLoaded', () => {
+      renderCredits(LICENSE_DATA);
+
+      document.getElementById('toggleAllBtn').addEventListener('click', toggleAll);
+      document.getElementById('searchInput').addEventListener('input', (e) => {
+        filterCredits(e.target.value);
+      });
+    });
+  </script>
+</body>
+</html>
