@@ -1,0 +1,27 @@
+{
+  "name": "chrome-credits-open-source",
+  "version": "1.0.0",
+  "description": "Professional Chrome://credits inspired open-source licenses viewer for website development and marketing transparency",
+  "main": "index.html",
+  "scripts": {
+    "start": "npx serve . -p 400",
+    "dev": "npx serve . -p 400",
+    "serve": "npx serve . -p 400",
+    "preview": "npx serve . -p 400"
+  },
+  "keywords": [
+    "chrome",
+    "credits",
+    "open-source",
+    "licenses",
+    "website-development",
+    "javascript",
+    "compliance",
+    "marketing"
+  ],
+  "author": "pointgoddesscc-sketch",
+  "license": "MIT",
+  "devDependencies": {
+    "serve": "^14.2.4"
+  }
+}
